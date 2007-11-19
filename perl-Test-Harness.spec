@@ -1,7 +1,7 @@
 %define module  Test-Harness
 %define name    perl-%{module}
-%define version 2.64
-%define release %mkrel 2
+%define version 3.02
+%define release %mkrel 1
 
 Name:           %{name}
 Version:        %{version}
@@ -57,6 +57,8 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %doc Changes
 %{perl_vendorlib}/Test
+%{perl_vendorlib}/TAP
+%{perl_vendorlib}/App
 %{_mandir}/*/*
 %{_bindir}/prove-%{version}
 
