@@ -14,7 +14,6 @@ Source:         http://www.cpan.org/modules/by-module/Test/%{module}-%{version}.
 %if %{mdkversion} < 1010
 BuildRequires:  perl-devel
 %endif
-BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description 
 STOP! If all you want to do is write a test script, consider using
