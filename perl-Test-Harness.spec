@@ -43,8 +43,7 @@ rm -rf %{buildroot}
 # rename prove to avoid conflict with perl
 mv %{buildroot}/%{_bindir}/prove %{buildroot}/%{_bindir}/prove-%{version}
 # rename mandir files to avoid conflict with regular Mandriva perl
-# *** Ugly temporary fix ***
-find %{buildroot}/%{_mandir} -type f -exec mv {} {}_Harness2.64 \;
+find %{buildroot}/%{_mandir} -type f -exec mv {} {}-%{version} \;
 
 %check
 %make test
@@ -60,5 +59,3 @@ rm -rf %{buildroot}
 %{perl_vendorlib}/App
 %{_mandir}/*/*
 %{_bindir}/prove-%{version}
-
-
