@@ -1,6 +1,6 @@
 %define module  Test-Harness
 %define name    perl-%{module}
-%define version 3.16
+%define version 3.17
 %define release %mkrel 1
 
 Name:           %{name}
