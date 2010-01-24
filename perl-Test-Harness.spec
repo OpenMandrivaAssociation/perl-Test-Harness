@@ -1,20 +1,21 @@
-%define module  Test-Harness
-%define name    perl-%{module}
-%define version 3.17
-%define release %mkrel 1
+%define upstream_name    Test-Harness
+%define upstream_version 3.20
 
-Name:           %{name}
-Version:        %{version}
-Release:        %{release}
-Summary:        Run Perl standard test scripts with statistics
-License:        GPL or Artistic
-Group:          Development/Perl
-URL:            http://search.cpan.org/dist/%{module}
-Source:         http://www.cpan.org/modules/by-module/Test/%{module}-%{version}.tar.bz2
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
+Summary:    Run Perl standard test scripts with statistics
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Test/%{upstream_name}-%{upstream_version}.tar.gz
+
 %if %{mdkversion} < 1010
 BuildRequires:  perl-devel
 %endif
-BuildRoot:      %{_tmppath}/%{name}-%{version}
+
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
 
 %description 
 STOP! If all you want to do is write a test script, consider using
@@ -32,7 +33,7 @@ checks standard output for the expected strings in TAP format.
 The prove utility is a thin wrapper around Test::Harness.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -42,9 +43,9 @@ The prove utility is a thin wrapper around Test::Harness.
 rm -rf %{buildroot}
 %makeinstall_std
 # rename prove to avoid conflict with perl
-mv %{buildroot}/%{_bindir}/prove %{buildroot}/%{_bindir}/prove-%{version}
+mv %{buildroot}/%{_bindir}/prove %{buildroot}/%{_bindir}/prove-%{upstream_version}
 # rename mandir files to avoid conflict with regular Mandriva perl
-find %{buildroot}/%{_mandir} -type f -exec mv {} {}-%{version} \;
+find %{buildroot}/%{_mandir} -type f -exec mv {} {}-%{upstream_version} \;
 
 %check
 %make test
@@ -59,4 +60,4 @@ rm -rf %{buildroot}
 %{perl_vendorlib}/TAP
 %{perl_vendorlib}/App
 %{_mandir}/*/*
-%{_bindir}/prove-%{version}
+%{_bindir}/prove-%{upstream_version}
