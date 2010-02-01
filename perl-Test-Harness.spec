@@ -1,5 +1,5 @@
 %define upstream_name    Test-Harness
-%define upstream_version 3.20
+%define upstream_version 3.21
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
