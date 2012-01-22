@@ -1,20 +1,15 @@
 %define upstream_name    Test-Harness
-%define upstream_version 3.22
+%define upstream_version 3.23
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    %mkrel 1
 
 Summary:    Run Perl standard test scripts with statistics
 License:    GPL+ or Artistic
 Group:      Development/Perl
 Url:        http://search.cpan.org/dist/%{upstream_name}
 Source0:    http://www.cpan.org/modules/by-module/Test/%{upstream_name}-%{upstream_version}.tar.gz
-
-%if %{mdkversion} < 1010
-BuildRequires:  perl-devel
-%endif
-
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
 
 %description 
