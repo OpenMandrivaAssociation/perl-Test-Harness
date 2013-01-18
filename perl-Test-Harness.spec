@@ -1,9 +1,9 @@
 %define upstream_name    Test-Harness
-%define upstream_version 3.22
+%define upstream_version 3.26
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Release:	1
 
 Summary:	Run Perl standard test scripts with statistics
 License:	GPL+ or Artistic
