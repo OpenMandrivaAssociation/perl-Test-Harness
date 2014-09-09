@@ -1,5 +1,5 @@
 %define modname	Test-Harness
-%define modver 3.32
+%define modver 3.33
 
 Summary:	Run Perl standard test scripts with statistics
 Name:		perl-%{modname}
