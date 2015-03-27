@@ -3,5 +3,6 @@ removed_sources:
   Test-Harness-3.30.tar.gz: 5f7cc2392accaf47100cf2a57c5513c3fa29b1dc
   Test-Harness-3.32.tar.gz: 7e94039be7be6577be39784159a00f1e908d484f
   Test-Harness-3.33.tar.gz: cf70720a949466a6d6c11b545b46c9d1535bae6f
-sources:
   Test-Harness-3.34.tar.gz: 5feba289b0634bedc4c3da3f458e48535f97c5b9
+sources:
+  Test-Harness-3.35.tar.gz: 707ddd2dfd873014bca30841c8ceb2b88f8a3b05

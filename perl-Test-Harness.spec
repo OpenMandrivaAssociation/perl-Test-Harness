@@ -1,10 +1,10 @@
 %define modname	Test-Harness
-%define modver 3.34
+%define modver 3.35
 
 Summary:	Run Perl standard test scripts with statistics
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	2
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
@@ -31,7 +31,7 @@ The prove utility is a thin wrapper around Test::Harness.
 %setup -qn %{modname}-%{modver}
 
 %build
-%__perl Makefile.PL INSTALLDIRS=vendor
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %install
